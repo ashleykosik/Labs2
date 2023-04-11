@@ -1,0 +1,86 @@
+//Day 6 Demo
+// create a variable for Jons Health
+
+let jonSnowHealth = 100
+// change it to a string
+jonSnowHealth = String(jonSnowHealth) // string method
+jonSnowHealth += '' // string coersion
+
+console.log(jonSnowHealth)
+console.log(Boolean(jonSnowHealth))
+console.log(typeof jonSnowHealth)
+
+//
+let theWinnerIs = 'Jamie is the winner'
+// change jamie to jon
+// theWinnerIs = theWinnerIs.replace('Jamie', 'Jon')
+// console.log(theWinnerIs)
+// theWinnerIs = theWinnerIs.toLowerCase().replace('jamie', 'jon')
+// console.log(theWinnerIs)
+
+//
+let theNewWinnerIs = theWinnerIs.replace('Jamie', 'Jon')
+if(theNewWinnerIs.includes('Jon')) {
+    console.log('change confirmed to string')
+}
+
+theNewWinnerIs = theNewWinnerIs.toLowerCase().split(' ').join('-')
+console.log(theNewWinnerIs)
+
+// functions
+function isJonAlive() {
+    if(jonSnowHealth > 0) {
+        console.log('Jon is alive')
+    } else {
+        console.log('Jon has been slain RIP')
+    }
+}
+// call function
+isJonAlive()
+
+// function with parameters
+const surpriseAttack = function(attack){
+    jonSnowHealth -= attack
+    isJonAlive()
+} 
+
+surpriseAttack(30)
+console.log(jonSnowHealth)
+surpriseAttack(75)
+
+// multi arguements with arrow function
+// create function for 2 people to greet each other
+
+const greeting = (name1, name2) => {
+    console.log(`${name1} says hello to ${name2}`)
+    console.log(`${name2} says hello to ${name1}`)
+}
+
+greeting('Vinson', 'Melissa')
+greeting('Dj', 'Ashley')
+
+// can also be written
+const hello = (name1, name2) => console.log(`${name1} says hello to ${name2}`)
+
+//function to represent a dice roll
+function rollDice(){
+    let possible = [1, 2, 3, 4, 5, 6]
+    let random = Math.floor(Math.random() * possible.length);
+    return possible[random]
+}
+
+let firstRoll = rollDice()
+console.log(firstRoll)
+
+//rollDice twice and multiples value
+
+function newRollDice() {
+let firstRoll = rollDice()
+console.log(firstRoll)
+let secondRoll = rollDice()
+console.log(secondRoll)
+return firstRoll * secondRoll
+}
+console.log(newRollDice)
+let mDice = newRollDice()
+console.log(mDice)
