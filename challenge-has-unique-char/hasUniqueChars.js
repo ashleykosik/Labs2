@@ -14,8 +14,6 @@
 
 let sample = `bob`
 
-
-
 function uniqueChars(word) {
 let array = word.split('')
 for (let i = 0; i < word.length; i++) {
@@ -27,6 +25,5 @@ for (let i = 0; i < word.length; i++) {
     }
     return true
 }
-
 
 console.log(uniqueChars(sample))
