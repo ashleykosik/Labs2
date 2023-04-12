@@ -48,3 +48,24 @@ function luckyNumbersArr(n) {
 return luckyNumbers2.splice(0, n)
 }
 console.log(luckyNumbersArr(6))
+
+
+let baseSalary = 30_000;
+let overtime = 10;
+let rate = 20;
+//functional programming
+function getWage(baseSalary, overtime, rate) {
+   return baseSalary + (overtime * rate)
+}
+
+//vs
+//object oriented programming
+let employee = {
+   baseSalary: 30_000,
+   overtime: 10,
+   rate: 20,
+   getWage: function() {
+      return this.baseSalary + (this.overtime * this.rate)
+   }
+}
+employee.getWage()
