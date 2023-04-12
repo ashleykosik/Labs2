@@ -38,13 +38,13 @@ luckyNumbersAr(5)
 // outputs only unique numbers into an array
 
 let luckyNumbers2 = []
-function luckyNumbersAr(n) {
+function luckyNumbersArr(n) {
+   let randomNumber = Math.floor(Math.random() * 10) +1
     for (let i = 1; i <= n; i++){
-       luckyNumbers2.push(Math.floor(Math.random() * 10) +1)
-    } if (!randomNumbersAr.includes(randomNumber)){
-    randomNumbersArr.push(randomNumber)
+    if (!luckyNumbers2.includes(randomNumber)){
+    luckyNumbers2.push(randomNumber)
 }
 }
-return randomNumbersArr.splice(0, num)
+return luckyNumbers2.splice(0, n)
 }
-console.log(luckyNumbers(6))
+console.log(luckyNumbersArr(6))
