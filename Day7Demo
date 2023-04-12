@@ -1,0 +1,96 @@
+//Day7Demo
+
+let person = {
+    firstName: 'Micheal',
+    lastName: 'Scott', 
+    age: 34,
+}
+console.log(person.firstName)
+console.log(person['firstName'])
+
+let meal = {
+    appetizer: 'cheese sticks',
+    entree: 'chicken parm',
+    dessert: 'ice cream',
+    drink: 'coke'
+}
+
+let {dessert} = meal
+console.log(dessert)
+let {entree, appetizer} = meal
+console.log(entree)
+console.log(appetizer)
+
+const {drink: sweet} = meal
+// const sweetness = meal.drink
+console.log(sweet)
+
+const {appetizer: myAppetizer, entree: myEntree, dessert: myDessert, drink: myDrink} = meal
+console.log(myAppetizer)
+console.log(myEntree)
+console.log(myDrink)
+console.log(myDessert)
+
+for(let key in meal) {
+    //console.log(meal[key])
+    console.log(`${key} : ${meal[key]}`)
+}
+// key can be anything
+// for(let i in meal) {
+//     //console.log(meal[i])
+//     console.log(`${i} : ${meal[i]}`)
+// }
+
+// add person's job as developer
+person.job = `web developer`
+// add pet chicken & duck
+person.pet = [`chicken`, `duck`]
+console.log(person)
+// add Dog object
+person.pet.push('Dog')
+console.log(person.pet[1])
+
+let teams = {
+    teamOne: ['ryan', 'alex', 'wyatt', 'tj'],
+    teamTwo: ['henry', 'cole', 'charlie', 'zeke'],
+    teamThree: ['porter', 'blake', 'june', 'owen'],
+    teamFour: ['brian', 'riley', 'ezra', 'jordan'],
+    teamFive: ['grey', 'milo', 'mckay', 'leo']
+
+}
+delete teams.teamFour
+
+//create class of cars
+
+class Car = {
+    constructor (make, model, year, color,) {
+    this.makerOfCars = make
+    this.model = model
+    this.year = year
+    this.color = color
+    this.miles = 0
+    //default values
+    }
+    drive(milesToDrive) {
+        this.miles += milestoDrive
+    }
+}
+
+
+let chasesCar = new Car('Pontiac', 'GrandPrix', 1998, 'red')
+console.log(chasesCar)
+console.log(chasesCar[makerOfCars])
+
+chasesCar.drive(50)
+console.log(chasesCar)
+
+class Sedan extends Car{
+    constructor(make, model, year, color, type) {
+    super(make, model, year, color) // pulls from parent class
+    this.passengerCount = 5
+    this.doors = 4
+    this.type = type
+}
+}
+let vinsonsCar = new Sedan('Tesla', 'model 3', 2025, 'black', 'electric')
+vinsonsCar.drive(100)

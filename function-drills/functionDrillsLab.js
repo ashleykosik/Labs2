@@ -400,10 +400,6 @@ function ascend(array) {
 }
 let arrayIsAscending = ascend(sampleArray)
 
-// git remote add origin https://github.com/ashleykosik/Labs2.git
-// git branch -M main
-// git push -u origin main
-
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
