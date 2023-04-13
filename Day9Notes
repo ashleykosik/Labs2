@@ -1,0 +1,13 @@
+//Day9Notes
+
+
+numArray.forEach((elem, i) => console.log(${elem} ${i}))
+
+.reduce(accumulator, currentValue) // reduces to a single value
+// same as sum += sum
+//initial value is array[0]
+//accumulator = array[0]  //currentValue = array[1]
+//currentValue - works like the index starts at 1
+
+const newReduced = numArray.reduce((a, c) => {a + c}, 10) 
+// sum of array +10
