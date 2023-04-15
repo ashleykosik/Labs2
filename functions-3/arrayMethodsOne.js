@@ -129,9 +129,23 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
-const bob = purchases.filter((x) => x.owner === 'Bob')
-console.log(bob)
-const bobsTotal = bob.reduce((b, y) => b + y.price, 0)
-console.log(bobsTotal)
+// const bob = purchases.filter((x) => x.owner === 'Bob')
+// console.log(bob)
+// const bobsTotal = bob.reduce((b, y) => b + y.price, 0)
+// console.log(bobsTotal)
+const asArray = Object.entries(purchases);
 
+//const filtered = asArray.filter(([key, value]) => typeof value === 'string');
+
+
+
+function employeeTotal(num) {
+  const filterArr = asArray.filter(dollars, num) => dollars > num 
+
+  // if (name === "Barry") {
+  //     filterArr.filter(arr.price > num)
+  // }
+  // return filterArr
+}
+console.log(employeeTotal(100))
 //
