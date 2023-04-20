@@ -26,14 +26,19 @@
 //  create a new array named map2 that contains all the numbers
 //  from map1 subtracted by 1.
 
-const map1 = [1, 2, 3, 4, 5]
+let map1 = [1, 2, 3, 4, 5]
+let map2 = map1.map((el) => el - 1)
+console.log(map2)
 
+//same as 
+const cb = ((el) => el - 1)
+let map2o = map1.map(cb)
 
 // 1.2
 //  Using the map method, create a new array, map3, that is
 //  the same as map1, except for all the numbers are converted
 //  to the string data type.
-
+const map3 = map1.map((el) => el.toString())
 
 
 // 1.3
@@ -62,7 +67,16 @@ const map4 = [
         hobby: 'Painting',
     },
 ]
+// add President to all names
+let map5 = map4.map((el) => 'President ' + el.name)
+// or `President ${el.name}`
 
+// for only George
+let map6 = map4.map((el) => {
+    if (el.name === 'George') {
+        return 'President ${el.name}'
+    }
+})
 
 // *** Problem 2 ***
 //  Students should be able to use the array's filter method
@@ -72,13 +86,15 @@ const map4 = [
 //  using the filter method that contains only odd numbers.
 
 const arrNum = [1, 5, 6, 8, 0, 19, -2]
+const oddNum = arrNum.filter((num) => num % 2 !== 0)
+console.log(oddNum)
 
-
-// 2.2
-//  Using the array from 2.1, arrNum, create a new array
-//  using the filter method that only contains odd numbers
-//  that have an odd array index in the original array.
-
+// // 2.2
+// //  Using the array from 2.1, arrNum, create a new array
+// //  using the filter method that only contains odd numbers
+// //  that have an odd array index in the original array.
+const oddNum2 = arrNum.filter((num, idx) => num % 2 !== 0 && idx % 2 !== 0)
+console.log(oddNum2)
 
 
 // 2.3
@@ -96,6 +112,8 @@ const arrString = [
     'oranges'
 ]
 
+const arrfilt = arrString.filter((el) => el.includes('a'))
+console.log(arrfilt)
 
 // *** Problem 3 ***
 //  Students should be able to use the array's forEach method
@@ -113,12 +131,18 @@ for (let i = 0; i < theNumArr.length; i++) {
     sum += theNumArr[i]
 }
 
+let newSum = 0;
+theNumArr.forEach((el) => newSum += el)
+console.log(newSum)
+
 
 // 3.2
 //  Solve problem 1.1 using the forEach method instead of the
 //  map method. Also, the variable of your new array should be
 //  called myNewArray1 instead of map2.
-
+const myNewArray1 = []
+map1.forEach((el) => myNewArray1.push(el-1) )
+console.log(myNewArray1)
 
 
 // 3.3
@@ -126,8 +150,9 @@ for (let i = 0; i < theNumArr.length; i++) {
 //  map method, only this time, don't create a new array:
 //  modify the original map1 array (this is called "in place"
 //  modification).
-
-
+map1.forEach((el, idx, arr) => arr[idx] = el - 1)
+console.log(map1)
+// arr is map1 because its tied to the forEach
 
 // *** Problem 4 ***
 //  Students should be able to use the array's reduce method
@@ -138,13 +163,17 @@ for (let i = 0; i < theNumArr.length; i++) {
 
 const reduce1 = [30, 40, 70, 10, 50]
 
+let sumReduce = reduce1.reduce((a, c) => a + c)
+console.log(sumReduce)
+
 // 4.2
 //  Like problem 4.1, use the reduce method to sum all of the numbers
 //  inside of the array reduce1 together. However, this time, your
 //  sum should have an initial value of 100. You must accomplish this
 //  by making the second argument of your reduce method invocation to be
 //  this initial value. Save your sum to a new variable.
-
+let sumReduce2 = reduce1.reduce((a, c) => a + c, 100)
+console.log(sumReduce2)
 
 
 // 4.3
@@ -174,3 +203,5 @@ let objArr = [
     },
 ]
 
+const conglomerate = objArr.reduce((a, c) => a + c.name, '')
+console.log(conglomerate)
